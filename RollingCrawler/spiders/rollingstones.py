@@ -1,10 +1,13 @@
 import scrapy
 import re
 
+import spotipy
+import sys
+from spotipy.oauth2 import SpotifyClientCredentials
 
 class RollingstonesSpider(scrapy.Spider):
     name = 'rollingstones'
-    # allowed_domains = ['rollingstones.com']
+    allowed_domains = ['rollingstones.com']
     start_urls = ['https://www.rollingstone.com/music/']
 
     def parse(self, response):
@@ -26,6 +29,15 @@ class RollingstonesSpider(scrapy.Spider):
         # And the Wiki page to derive more information. Further plans to make requests to Twitter(if time permits) and Spotify API and get the 
         # most relevant Tweets and the most relevant songs of the artist : Contribute more to the music encyclopedia
 
+        # Authenticating the API with the required credentials 
+        client_credentials_manager = SpotifyClientCredentials(client_id='b7cf2f5f0e074d1ca984a546822797cc',
+                                client_secret='c435b02f49304b7db74ec08ddb7df6e7')
+        spotify = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
+
+        # Example Query
+        name = 'Radiohead'
+        results = spotify.search(q='artist:' + name, type='artist')
+        items = results['artists']['items']
 
         # Give the extracted content row wise
         for item in zip(titles,link,category,img):
