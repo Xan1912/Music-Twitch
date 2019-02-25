@@ -1,0 +1,71 @@
+******************
+GROUP DESCRIPTION
+******************
+
+GROUP NAME: Music Twitch
+
+MEMBERS & MAt. Number:
+1)Nana Agyei-Kena (3236279)
+2)Eduardo Galuppi ()
+3)Lisa Schütz ()
+4)Meghdut Sengupta ()
+
+*******************
+Project Description
+*******************
+We have a spider that crawls information about music from www.rollingstone.com/music. The data is saved into a database (postgre) and scheduled using Scrapyd. We have a sample website that displays the information scraped.
+(Please refer to our presentation (music-twitch.pdf) file for more details about our project)
+
+
+*************************
+How to reproduce our work
+*************************
+#Please go to our project directory
+cd /mount/studenten/text-technologies/workspace-2018-ws/Music-Twitch/projects/
+
+#Activate the virtual environment
+source bin/activate
+
+#Go to the project directory
+cd rollingstone/rollingstone/spiders
+
+#run the following commands
+#To crawl the data and save it into a csv file, run
+scrapy crawl rollingstone -o rollingstone.csv -t csv
+
+#To schedule the spider and view it with scrapyd, run
+scrapyd-deploy default
+
+#then
+curl http://localhost:6800/schedule.json -d project=rollingstone -d spider=rollingstone
+
+#visit the scheduler site and click on logs to see the process running
+http://localhost:6800/
+
+(Please search scrapyd API on google for more functions.) 
+
+********************
+Database connections
+********************
+# The database we used is Postgres. Please download postgre PgAdminIII for a more friendly interface. We assume your computer uses any of the linux systems. 
+
+#Install postgres
+sudo apt-get install postgresql postgresql-contrib
+
+#Configure PostgreSQL to start up upon server boot.
+update-rc.d postgresql enable
+
+# start Postgres running
+service postgresql start
+
+#Log into the postgres user.
+psql -U postgres
+
+#Create a database (To match the database settings and connections in our settings.py)
+CREATE DATABASE rollingstones 
+
+#Connect to the database
+\c rollingstones
+
+#Run the command below to see the data after running the spider
+SELECT * FROM rollingstone LIMIT 10; 
