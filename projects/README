@@ -6,9 +6,9 @@ GROUP NAME: Music Twitch
 
 MEMBERS & MAt. Number:
 1)Nana Agyei-Kena (3236279)
-2)Eduardo Galuppi ()
-3)Lisa Schütz ()
-4)Meghdut Sengupta ()
+2)Eduardo Galuppi (3323108)
+3)Lisa Schütz (3413937)
+4)Meghdut Sengupta (3390238)
 
 *******************
 Project Description
@@ -20,9 +20,6 @@ We have a spider that crawls information about music from www.rollingstone.com/m
 *************************
 How to reproduce our work
 *************************
-#Please go to our project directory
-cd /mount/studenten/text-technologies/workspace-2018-ws/Music-Twitch/projects/
-
 #Activate the virtual environment
 source bin/activate
 
