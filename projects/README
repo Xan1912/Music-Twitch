@@ -4,7 +4,7 @@ GROUP DESCRIPTION
 
 GROUP NAME: Music Twitch
 
-MEMBERS & MAt. Number:
+MEMBERS & Matriculation Number:
 1)Nana Agyei-Kena (3236279)
 2)Eduardo Galuppi (3323108)
 3)Lisa Schütz (3413937)
@@ -20,13 +20,17 @@ We have a spider that crawls information about music from www.rollingstone.com/m
 *************************
 How to reproduce our work
 *************************
+#Download project from github
+git clone https://github.com/Xan1912/Music-Twitch/projects/
+
 #Activate the virtual environment
 source bin/activate
 
 #Go to the project directory
 cd rollingstone/rollingstone/spiders
 
-#run the following commands
+#run the following commands:
+
 #To crawl the data and save it into a csv file, run
 scrapy crawl rollingstone -o rollingstone.csv -t csv
 
@@ -59,10 +63,10 @@ service postgresql start
 psql -U postgres
 
 #Create a database (To match the database settings and connections in our settings.py)
-CREATE DATABASE rollingstones 
+CREATE DATABASE rollingstones; 
 
 #Connect to the database
 \c rollingstones
 
 #Run the command below to see the data after running the spider
-SELECT * FROM rollingstone LIMIT 10; 
+SELECT * FROM rollingstone LIMIT 50; 
