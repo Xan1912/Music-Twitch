@@ -21,7 +21,7 @@ We have a spider that crawls information about music from www.rollingstone.com/m
 How to reproduce our work
 *************************
 #Download project from github
-git clone https://github.com/Xan1912/Music-Twitch/projects/
+git clone https://github.com/Xan1912/Music-Twitch/tree/master/projects
 
 #Activate the virtual environment
 source bin/activate
