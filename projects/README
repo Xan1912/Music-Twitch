@@ -62,6 +62,9 @@ service postgresql start
 #Log into the postgres user.
 psql -U postgres
 
+#Edit the "DATABASE" section in the settings.py with your user credentials.
+
+
 #Create a database (To match the database settings and connections in our settings.py)
 CREATE DATABASE rollingstones; 
 
