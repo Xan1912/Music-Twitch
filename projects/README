@@ -45,6 +45,7 @@ http://localhost:6800/
 
 (Please search scrapyd API on google for more functions.) 
 
+
 ********************
 Database connections
 ********************
@@ -63,13 +64,21 @@ service postgresql start
 psql -U postgres
 
 #Edit the "DATABASE" section in the settings.py with your user credentials.
+DATABASE = {
+	'drivername': 'postgres',
+	'host': 'localhost',
+	'port': '5432',
+	'username': YOUR_USER_NAME,
+	'password': 'YOUR_PASSWORD,
+	'database': 'rollingstones' 
 
+}
 
 #Create a database (To match the database settings and connections in our settings.py)
-CREATE DATABASE rollingstones; 
+CREATE DATABASE rollingstones;    
 
 #Connect to the database
-\c rollingstones
+\c rollingstones        
 
 #Run the command below to see the data after running the spider
-SELECT * FROM rollingstone LIMIT 50; 
+SELECT * FROM rollingstone LIMIT 50;    
