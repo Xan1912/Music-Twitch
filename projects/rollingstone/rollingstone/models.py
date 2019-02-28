@@ -9,7 +9,7 @@ DeclarativeBase = declarative_base()
 	
 def db_connect():
 	"""
-		Performs database sonnection using dataabase settings from the settings.py
+		Performs database sonnection using database settings from the settings.py
 		Returns sqlalchemy engine 
 	"""
 	return create_engine(URL(**rollingstone.settings.DATABASE))

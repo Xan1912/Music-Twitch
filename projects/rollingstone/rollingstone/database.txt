@@ -1,4 +1,0 @@
-localhost
-postgres
-Academy@08
-rollingstone

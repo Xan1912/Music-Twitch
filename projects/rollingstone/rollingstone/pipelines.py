@@ -35,34 +35,3 @@ class RollingstonePipeline(object):
 			session.close()
 		
 		return item
-
-
-
-
-
-
-
-
-
-
-
-"""
-class RollingstonePipeline(object):
-	#Database connection
-	with open("",r) as f:
-		lines = f.read()
-		HOSTNAME = lines
-	def __init__self(self):
-		self.conn = pymssql.connect(host=HOSTNAME,  user=USER, password=PASSWORD, database=DATABASE)
-		self.cursor = self.conn.cursor()
-
-	#pipeline items into database	
-    def process_item(self, item, spider):
-    	try:
-    		self.cursor.execute("INSERT INTO rollingstones(title, artiste_name) VALUES (%s, %s)",
-    			(item['title'], item['artiste_name']))
-    		self.conn.commit()
-    	except pymssql.Error, e:
-    		print ("Error")
-        return item
-"""
